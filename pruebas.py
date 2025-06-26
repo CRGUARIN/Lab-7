@@ -1,3 +1,5 @@
 import interfaz as intr
 
-intr.mainMenu()
+#intr.mainMenu()
+
+intr.menuDeleteStudent()

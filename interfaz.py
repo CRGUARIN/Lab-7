@@ -1,4 +1,13 @@
 def mainMenu():
+    """
+    It shows the main menu and asks the user for the desired option.
+    
+    Args: 
+        none
+
+    Returns:
+        string: the desired option
+    """
     print("""
 
 ▗▄▄▖ ▄ ▗▞▀▚▖▄▄▄▄  ▄   ▄ ▗▞▀▚▖▄▄▄▄  ▄    ▐▌ ▄▄▄  
@@ -23,3 +32,26 @@ cantidad de cursos inscritos
             print("\nIngrese una opción válida\n")
         else:
             return option
+
+def menuDeleteStudent():
+    print("""
+------------------------------------------------
+Ingrese el documento del estudiante que desea eliminar:""")
+
+    while True:
+        id = input()
+
+        if id.isdigit():
+            
+            if len(id) == 10:
+            
+                return int(id)
+            
+            else:
+            
+                print("Ingrese un número de documento válido")
+
+        else:
+        
+            print("Ingrese un número de documento válido")
+
