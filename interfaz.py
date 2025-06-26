@@ -1,12 +1,12 @@
 def mainMenu():
     """
-    It shows the main menu and asks the user for the desired option.
+    It shows the main menu, asks the user for the desired option, verifies that it meets the requirements, and returns it.
     
     Args: 
         none
 
     Returns:
-        string: the desired option
+        option --> (str) The desired option
     """
     print("""
 
@@ -33,10 +33,18 @@ cantidad de cursos inscritos
         else:
             return option
 
-def menuDeleteStudent():
-    print("""
+def menuAskID(message):
+    """It shows the desired message, asks for an ID number and verifies that the input meets the requirements
+    
+    Args:
+        message --> (string) What do you want to do with the ID?
+
+    Returns
+        id --> (int) The ID typed by the user
+    """
+    print(f"""
 ------------------------------------------------
-Ingrese el documento del estudiante que desea eliminar:""")
+{message}""")
 
     while True:
         id = input()
@@ -54,4 +62,3 @@ Ingrese el documento del estudiante que desea eliminar:""")
         else:
         
             print("Ingrese un número de documento válido")
-
