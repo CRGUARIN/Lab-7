@@ -40,7 +40,7 @@ def menuAskID(message):
         message --> (string) What do you want to do with the ID?
 
     Returns
-        id --> (int) The ID typed by the user
+        id --> (str) The ID typed by the user
     """
     print(f"""
 ------------------------------------------------
@@ -53,7 +53,7 @@ def menuAskID(message):
             
             if len(id) == 10:
             
-                return int(id)
+                return id
             
             else:
             

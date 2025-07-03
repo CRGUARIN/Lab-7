@@ -94,4 +94,48 @@ def deleteStudent(studentID, ids_list, grades_matrix):
         
         return False
 
+def bestStudentGrade(studentID, ids_list, grades_matrix, subjects):
+    """
+    Receives an ID and returns trhe highest grade of that student
 
+    Args:
+        studentID --> (str) The student whose highest grade you want to know
+        ids_list --> (List[str]) The list with all the IDs
+        grades_matrix --> (List[float]) The list with all the student's grades
+        subjects --> (List[str]) The list with subjects info
+
+    Returns:
+        highest_grade, subject_name --> (int, str) If the process is successful
+        False --> (bool) If the process is unsuccessful
+
+    Raises:
+        ValueError --> If the function doesn't find the entered ID
+    """
+    try:
+        
+        #Find the student ID index
+        student_index = ids_list.index(studentID)
+
+        #Getting the student grades index
+        student_grades = grades_matrix[student_index]
+
+        #Find the highest grade and it's position
+        #We use values that every grade overcome
+        highest_grade = -1
+        grade_index = -1
+        
+        for i in range(len(student_grades)):
+            
+            if student_grades[i] > highest_grade:
+                highest_grade = student_grades[i]
+                grade_index = i
+
+        #Find the subject name
+        subject_name = subjects[grade_index]
+
+        #Return the highest grade and the corresponding subject
+        return highest_grade, subject_name
+    
+    #If .index() method doesn't find the ID it returns a ValueError
+    except ValueError:
+        return False
